@@ -17,6 +17,7 @@ Evento exclusivo e gratuito, promovido pela Rocketseat para ensino.
 ![](./Habits.png)
 
 <br>
+
 ## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido usando as seguintes tecnologias:

@@ -1,7 +1,7 @@
-import { FastifyInstance } from "fastify";
-import { prisma } from "./lib/prisma";
-import { z } from "zod";
 import dayjs from "dayjs";
+import { prisma } from "./lib/prisma";
+import { FastifyInstance } from "fastify";
+import { z } from "zod";
 
 export async function appRoutes(app: FastifyInstance) {
   app.post("/habits", async (request) => {
@@ -9,7 +9,6 @@ export async function appRoutes(app: FastifyInstance) {
       title: z.string(),
       weekDays: z.array(z.number().min(0).max(6)),
     });
-
     const { title, weekDays } = createHabitBody.parse(request.body);
 
     const today = dayjs().startOf("day").toDate();
@@ -33,7 +32,6 @@ export async function appRoutes(app: FastifyInstance) {
     const getDayParams = z.object({
       date: z.coerce.date(),
     });
-
     const { date } = getDayParams.parse(request.query);
 
     const parsedDate = dayjs(date).startOf("day");
@@ -76,7 +74,6 @@ export async function appRoutes(app: FastifyInstance) {
     const toggleHabitParams = z.object({
       id: z.string().uuid(),
     });
-
     const { id } = toggleHabitParams.parse(request.params);
 
     const today = dayjs().startOf("day").toDate();
@@ -86,7 +83,6 @@ export async function appRoutes(app: FastifyInstance) {
         date: today,
       },
     });
-
     if (!day) {
       day = await prisma.day.create({
         data: {
@@ -136,14 +132,13 @@ export async function appRoutes(app: FastifyInstance) {
             cast(count(*) as float)
           FROM habit_week_days HWD
           JOIN habits H
-            ON H.id = HWD.habit_id
-          WHERE
+            on H.id = HWD.habit_id
+          WHERE 
             HWD.week_day = cast(strftime('%w', D.date/1000.0, 'unixepoch') as int)
             AND H.created_at <= D.date
         ) as amount
-      FROM days D
+      FROM days D 
     `;
-
     return summary;
   });
 }

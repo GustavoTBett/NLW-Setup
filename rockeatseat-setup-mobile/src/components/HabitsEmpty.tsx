@@ -8,7 +8,7 @@ export function HabitsEmpty() {
     <Text className="text-zinc-400 text-base">
       Você ainda não está monitorando nenhum hábito {""}
       <Text
-        className="text-sky-400 text-base underline active:text-sky-500"
+        className="text-orange-400 text-base underline active:text-orange-500"
         onPress={() => navigate("new")}
       >
         comece cadastrando um.

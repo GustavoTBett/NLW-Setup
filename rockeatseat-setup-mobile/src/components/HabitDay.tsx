@@ -38,19 +38,18 @@ export function HabitDay({
     <TouchableOpacity
       className={clsx("rounded-lg border-2 m-1", {
         ["bg-zinc-900 border-zinc-800"]: amountAccomplishedPercentage === 0,
-        ["bg-sky-900 border-sky-700"]:
+        ["bg-orange-900 border-orange-700"]:
           amountAccomplishedPercentage > 0 && amountAccomplishedPercentage < 20,
-        ["bg-sky-800 border-sky-600"]:
-          amountAccomplishedPercentage >= 20 &&
+        ["bg-orange-800 border-orange-600"]:
+          amountAccomplishedPercentage > 20 &&
           amountAccomplishedPercentage < 40,
-        ["bg-sky-700 border-sky-500"]:
-          amountAccomplishedPercentage >= 40 &&
+        ["bg-orange-700 border-orange-500"]:
+          amountAccomplishedPercentage > 40 &&
           amountAccomplishedPercentage < 60,
-        ["bg-sky-600 border-sky-500"]:
-          amountAccomplishedPercentage >= 60 &&
+        ["bg-orange-600 border-orange-500"]:
+          amountAccomplishedPercentage > 60 &&
           amountAccomplishedPercentage < 80,
-        ["bg-sky-500 border-sky-400"]: amountAccomplishedPercentage >= 80,
-        ["border-white border-4"]: isCurrentDay,
+        ["bg-orange-500 border-orange-400"]: amountAccomplishedPercentage >= 80,
       })}
       style={{ width: DAY_SIZE, height: DAY_SIZE }}
       activeOpacity={0.7}

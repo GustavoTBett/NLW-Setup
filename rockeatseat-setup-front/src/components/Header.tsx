@@ -11,9 +11,9 @@ export function Header() {
       <Dialog.Root>
         <Dialog.Trigger
           type="button"
-          className="border border-violet-500 font-semibold rounded-lg px-6 py-4 flex items-center gap-3 hover:border-violet-300 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-offset-2 focus:ring-offset-background"
+          className="border border-orange-500 font-semibold rounded-lg px-6 py-4 flex items-center gap-3 hover:border-orange-300 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-background"
         >
-          <Plus size={20} className="text-violet-500" />
+          <Plus size={20} className="text-orange-500" />
           Novo hábito
         </Dialog.Trigger>
 

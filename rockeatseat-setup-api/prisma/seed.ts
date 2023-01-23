@@ -12,12 +12,11 @@ const thirdHabitId = "fa1a1bcf-3d87-4626-8c0d-d7fd1255ac00";
 const thirdHabitCreationDate = new Date("2023-01-08T03:00:00.000");
 
 async function run() {
-  await prisma.habit.deleteMany();
+  await prisma.dayHabit.deleteMany();
+  await prisma.habitWeekDays.deleteMany();
   await prisma.day.deleteMany();
+  await prisma.habit.deleteMany();
 
-  /**
-   * Create habits
-   */
   await Promise.all([
     prisma.habit.create({
       data: {
@@ -60,12 +59,8 @@ async function run() {
   ]);
 
   await Promise.all([
-    /**
-     * Habits (Complete/Available): 1/1
-     */
     prisma.day.create({
       data: {
-        /** Monday */
         date: new Date("2023-01-02T03:00:00.000z"),
         dayHabits: {
           create: {
@@ -75,12 +70,8 @@ async function run() {
       },
     }),
 
-    /**
-     * Habits (Complete/Available): 1/1
-     */
     prisma.day.create({
       data: {
-        /** Friday */
         date: new Date("2023-01-06T03:00:00.000z"),
         dayHabits: {
           create: {
@@ -90,13 +81,9 @@ async function run() {
       },
     }),
 
-    /**
-     * Habits (Complete/Available): 2/2
-     */
     prisma.day.create({
       data: {
-        /** Wednesday */
-        date: new Date("2023-01-T03:00:00.000z"),
+        date: new Date("2023-01-04T03:00:00.000z"),
         dayHabits: {
           create: [{ habit_id: firstHabitId }, { habit_id: secondHabitId }],
         },

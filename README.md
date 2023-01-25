@@ -14,11 +14,10 @@ Evento exclusivo e gratuito, promovido pela Rocketseat para ensino.
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
 
-<br>
-
 ![](./Habits.png)
 
 <br>
+
 ## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido usando as seguintes tecnologias:
@@ -51,6 +50,4 @@ O projeto foi desenvolvido durante a **[NLW Setup](https://app.rocketseat.com.br
 
 ## Idéias para o próximo nível
 
-- [ ] Autenticação (Firebase, Auth0, ...)
-- [ ] Notificações Push (mobile) / Service Workers (web)
-- [ ] Perfil público com gráfico de resumo
+- [ ] Ter como excluir um hábito após cria-lo

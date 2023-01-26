@@ -33,6 +33,7 @@ export function NewHabitForm() {
     setWeekDays([]);
 
     alert("Hábito criado com sucesso!");
+    window.location.reload();
   }
 
   function handleToggleWeekDay(weekDay: number) {

@@ -1,0 +1,61 @@
+Criar um Hábito
+
+Rota: POST /habits
+Corpo da Requisição: { "titulo": "Exercício" }
+Descrição: Cria um novo hábito com o título especificado. Os campos de id e created_at serão gerados automaticamente.
+Obter Todos os Hábitos
+
+Rota: GET /habits
+Descrição: Recupera uma lista de todos os hábitos.
+Obter um Hábito
+
+Rota: GET /habits/{idDoHabito}
+Descrição: Recupera um hábito específico com base no parâmetro idDoHabito.
+Atualizar um Hábito
+
+Rota: PUT /habits/{idDoHabito}
+Corpo da Requisição: { "titulo": "Novo Título do Hábito" }
+Descrição: Atualiza o título de um hábito específico identificado pelo parâmetro idDoHabito.
+Excluir um Hábito
+
+Rota: DELETE /habits/{idDoHabito}
+Descrição: Exclui um hábito específico com base no parâmetro idDoHabito.
+Criar um Dia da Semana para o Hábito
+
+Rota: POST /habits/{idDoHabito}/weekdays
+Corpo da Requisição: { "dia_da_semana": 1 }
+Descrição: Cria um novo dia da semana para o hábito especificado. O valor de dia_da_semana representa o dia da semana (1 para segunda-feira, 2 para terça-feira, etc.).
+Obter Todos os days da Semana do Hábito
+
+Rota: GET /habits/{idDoHabito}/weekdays
+Descrição: Recupera todos os days da semana do hábito associado a um hábito específico.
+Excluir um Dia da Semana do Hábito
+
+Rota: DELETE /habits/{idDoHabito}/weekdays/{idDoDiaDaSemana}
+Descrição: Exclui um dia da semana específico com base no parâmetro idDoDiaDaSemana, associado ao hábito especificado.
+Criar um Dia
+
+Rota: POST /days
+Corpo da Requisição: { "data": "2023-07-04T00:00:00Z" }
+Descrição: Cria um novo dia com a data especificada. O campo de id será gerado automaticamente.
+Obter Todos os days
+
+Rota: GET /days
+Descrição: Recupera uma lista de todos os days.
+Obter um Dia
+
+Rota: GET /days/{idDoDia}
+Descrição: Recupera um dia específico com base no parâmetro idDoDia.
+Associar um Hábito a um Dia
+
+Rota: POST /days/{idDoDia}/habits
+Corpo da Requisição: { "id_do_habito": "idDoHabito" }
+Descrição: Associa um hábito a um dia específico. O campo id_do_habito refere-se ao id do hábito.
+Obter Todos os Hábitos do Dia
+
+Rota: GET /days/{idDoDia}/habits
+Descrição: Recupera todos os hábitos associados a um dia específico.
+Excluir um Hábito do Dia
+
+Rota: DELETE /days/{idDoDia}/habits/{idDoHabito}
+Descrição: Desassocia um hábito específico de um dia específico com base no parâmetro idDoHabito.
